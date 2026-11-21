@@ -1,0 +1,1690 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.example.com/chapters/23-program-design-and-development-notes/">
+      
+      
+      
+        <link rel="prev" href="../22-calendar-options/">
+      
+      
+        <link rel="next" href="../24-report-generation-progress-and-timing/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>23 Program design and development notes - Dynamic Web Extended User Guide</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dynamic Web Extended User Guide" class="md-header__button md-logo" aria-label="Dynamic Web Extended User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynamic Web Extended User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              23 Program design and development notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynamic Web Extended User Guide" class="md-nav__button md-logo" aria-label="Dynamic Web Extended User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    Dynamic Web Extended User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1 Introduction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-main-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2 Main features
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3 History
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-installing-dynamic-web-extended/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4 Installing Dynamic Web Extended
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-creating-a-dynamic-web-extended-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5 Creating a Dynamic Web Extended website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-person-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6 Person pages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7 Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-lifespans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8 Lifespans
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-citations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  9 Citations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-tree-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10 Tree Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11 Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-why-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12 Why Me
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-story/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  13 Story
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-clarifying-multiple-families/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  14 Clarifying multiple families
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-local-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15 Local Labels
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-about-page-for-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  16 About page for website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-website-themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17 Website Themes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18 Statistics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19-calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19 Calendar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-other-enhancements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  20 Other enhancements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-dwe-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  21 DWE Options
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-calendar-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  22 Calendar Options
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  23 Program design and development notes
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  23 Program design and development notes
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-data-record-rather-than-infer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.1 Relationship data: record rather than infer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parent-child-relationship-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.2 Parent-child relationship None
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-families-and-siblings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.3 Multiple families and siblings
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parent-child-relationship-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.4 Parent-child relationship wording
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation-and-local-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.5 Translation and Local Labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topola-tree-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.6 Topola Tree Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree-viewer-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.7 Tree Viewer limitation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifespans-and-vega" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.8 Lifespans and Vega
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.9 Markdown processing
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gramps-styled-note-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.10 Gramps styled-note compatibility
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participation-events-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.11 Participation events labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.12 Diagnostic logging
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-and-source-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.13 Development and source control
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.14 Browser storage
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-css-and-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.15 Additional CSS and JavaScript
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-website-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.16 Generated website data files
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.17 Themes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-records-records-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.18 Notable records — records library
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-birthday-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.19 Calendar birthday names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-and-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.20 Known issues and future work
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-report-generation-progress-and-timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  24 Report generation progress and timing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  25 Appendix
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-data-record-rather-than-infer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.1 Relationship data: record rather than infer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parent-child-relationship-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.2 Parent-child relationship None
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiple-families-and-siblings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.3 Multiple families and siblings
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parent-child-relationship-wording" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.4 Parent-child relationship wording
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#translation-and-local-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.5 Translation and Local Labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topola-tree-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.6 Topola Tree Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tree-viewer-limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.7 Tree Viewer limitation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifespans-and-vega" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.8 Lifespans and Vega
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.9 Markdown processing
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gramps-styled-note-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.10 Gramps styled-note compatibility
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#participation-events-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.11 Participation events labels
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnostic-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.12 Diagnostic logging
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-and-source-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.13 Development and source control
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.14 Browser storage
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#additional-css-and-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.15 Additional CSS and JavaScript
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-website-data-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.16 Generated website data files
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.17 Themes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notable-records-records-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.18 Notable records — records library
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-birthday-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.19 Calendar birthday names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-issues-and-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        23.20 Known issues and future work
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="program-design-and-development-notes">23 Program design and development notes<a class="headerlink" href="#program-design-and-development-notes" title="Permanent link">&para;</a></h1>
+<p>☑ For creators ☐ For visitors</p>
+<p>This part of the Guide records some of the design decisions and implementation details behind Dynamic Web Extended. It is intended mainly for anyone maintaining or extending DWE in the future.</p>
+<p>DWE began as a modification of the Gramps Dynamic Web Report (DWR). Wherever practical, the existing DWR structure and behaviour have been retained. Changes have generally been made to add a feature, improve the presentation of existing information, or deal with a particular limitation encountered while using DWR.</p>
+<p>Some decisions described here are not obvious from the program code itself. They are recorded so that a future change does not inadvertently undo behaviour that was deliberately chosen.</p>
+<h2 id="relationship-data-record-rather-than-infer">23.1 Relationship data: record rather than infer<a class="headerlink" href="#relationship-data-record-rather-than-infer" title="Permanent link">&para;</a></h2>
+<p>DWE tries to report genealogical relationships that are explicitly recorded in Gramps rather than infer additional relationships from the surrounding family structure.</p>
+<p>This is particularly important for step relationships. A person should be described as a stepchild when that relationship has been recorded in Gramps. DWE does not assume that a child becomes the stepchild of somebody merely because a birth parent subsequently forms another family.</p>
+<p>The same principle is used when identifying siblings. DWE can find possible siblings by following the parent-child relationships recorded in Gramps, including non-birth relationships. It then uses shared birth parents to classify full and half-siblings. If a sibling connection is found but no common birth parent is found, DWE describes the person as a <strong>non-birth brother</strong>, <strong>non-birth sister</strong> or <strong>non-birth sibling</strong>, rather than guessing that the relationship is a step-sibling relationship.</p>
+<p>This distinction is deliberate. Family structure alone is not sufficient evidence for DWE to create a genealogical relationship that the researcher has not recorded.</p>
+<h2 id="parent-child-relationship-none">23.2 Parent-child relationship None<a class="headerlink" href="#parent-child-relationship-none" title="Permanent link">&para;</a></h2>
+<p>An explicit Gramps parent-child relationship of <strong>None</strong> should not be used for relationship traversal. It indicates that the parent-child relationship does not exist or is considered not to exist, and therefore should not be used to discover parents, siblings or other relatives.</p>
+<p>Whether an explicitly recorded <strong>None</strong> relationship should nevertheless be displayed to a website visitor is a separate presentation question. This remains an area for possible future work.</p>
+<h2 id="multiple-families-and-siblings">23.3 Multiple families and siblings<a class="headerlink" href="#multiple-families-and-siblings" title="Permanent link">&para;</a></h2>
+<p>DWR already supports people belonging to multiple families. DWE makes some changes to the presentation of these families to make less usual family structures easier to follow.</p>
+<p>The <strong>Parents &amp; siblings</strong> display associates children with the appropriate parent family and can also show other families of a person's parents. The inherited option controlling this behaviour is labelled <strong>Include children from other families of the parents</strong> in DWE and is selected by default.</p>
+<p>This option controls presentation only. It does not alter the genealogy used by other DWE features. For example, clearing the option may hide an additional parent family from <strong>Parents &amp; siblings</strong>, while <strong>Tracking</strong> can still identify a half-sibling and <strong>Events</strong> can still include that sibling's events.</p>
+<p>The DWR person-family JavaScript coding was corrected so that parent-family information is matched by the actual family index rather than its position in an intermediate list. This is important when a person has several parent families.</p>
+<p>DWE also corrects display problems encountered with families containing children but no recorded parents, and with collapse/expand controls in multiple-family displays. Gramps permits a family containing siblings without requiring an artificial unknown father or mother, and DWE can display such a family correctly.</p>
+<h2 id="parent-child-relationship-wording">23.4 Parent-child relationship wording<a class="headerlink" href="#parent-child-relationship-wording" title="Permanent link">&para;</a></h2>
+<p>DWE can alter the wording of standard Gramps parent-child relationship types, and a <strong>Parent-child relationship note</strong> can override relationship wording. The relationship naming supports the inverse, for example ‘Birth’ could be changed to ‘born to’.</p>
+<p>DWE does not maintain a table of default relationship phrases. If no <strong>Parent-child relationship note</strong> is selected, or if a relationship has no matching entry, the relationship name supplied by Gramps is used.</p>
+<p>The note is parsed into a dictionary keyed by the Gramps relationship name. The lookup uses the localized relationship name returned by Gramps, allowing entries to be written in the language used to generate the report. Multiple languages can coexist in the same note, and entry order is not significant.</p>
+<p>The optional A and P values allow the kinship word to be placed after or before the relationship phrase. This avoids assuming that English word order is suitable for every language.</p>
+<p>The user-supplied relationship phrases are not translated by DWE. The website creator is responsible for providing the standard relationship name and the desired wording.</p>
+<h2 id="translation-and-local-labels">23.5 Translation and Local Labels<a class="headerlink" href="#translation-and-local-labels" title="Permanent link">&para;</a></h2>
+<p>New interface text intended for translation follows the translation mechanism already used by Gramps. DWE-specific strings are added to the translated-label data where they are required by the generated JavaScript.</p>
+<p><strong>Local Labels</strong> is a separate mechanism. It allows the report creator to replace translated labels without modifying DWE. Replacement occurs after the normal label has been translated, so the label on the left of a Local Labels definition must correspond to the label in the language being used for the report.</p>
+<p>A Local Labels replacement is global to that translated label; it is not associated with one particular page or control. For this reason, a developer should not reuse the same translated string for unrelated purposes merely because the English wording happens to be identical.</p>
+<h2 id="topola-tree-viewer">23.6 Topola Tree Viewer<a class="headerlink" href="#topola-tree-viewer" title="Permanent link">&para;</a></h2>
+<p>The Tree Viewer is based on Topola Viewer. DWE uses a locally bundled build rather than depending on the online Topola service. The built application is stored under vendor/topola-viewer/dist.</p>
+<p>Bundling Topola keeps the generated website self-contained, does not send the family GEDCOM to an external viewer, and avoids cross-site and CORS (Cross-Origin Resource Sharing) issues that can arise when the DWE website and the viewer are hosted at different locations. The Tree Viewer and its supporting files are served from the same website as the rest of the DWE report.</p>
+<p>DWE generates the GEDCOM only when <strong>Include Tree Viewer</strong> is selected. The GEDCOM is generated using the Gramps GEDCOM writer and is then sanitised for use by Topola. DWE removes the generated submitter reference, submitter record and generated copyright header so that researcher details are not unnecessarily included in the Tree Viewer data.</p>
+<p>DWE's bundled Topola build has also been customised. Among the changes are integration with the DWE person pages, person highlighting, and renaming the export filenames.</p>
+<p>Changes to Topola source code are made in the separate Topola source/build directory and rebuilt before the resulting dist files are copied into DWE. Consequently, a future upgrade of Topola must preserve or reapply the DWE modifications rather than simply replacing the bundled files with a new upstream build.</p>
+<h2 id="tree-viewer-limitation">23.7 Tree Viewer limitation<a class="headerlink" href="#tree-viewer-limitation" title="Permanent link">&para;</a></h2>
+<p>Tree Viewer may fail to render large trees. It appears that Topola is in the process of developing expandable tree controls. This is a path for further investigation. If the Viewer could initially display a limited number of generations and expand the tree on demand, it might avoid the need to render a very large tree at once.</p>
+<h2 id="lifespans-and-vega">23.8 Lifespans and Vega<a class="headerlink" href="#lifespans-and-vega" title="Permanent link">&para;</a></h2>
+<p>The <strong>Lifespans</strong> display uses Vega rather than the normal DWR charting code.</p>
+<p>DWR generally exports small individual categories of information into separate JavaScript data structures and combines them in the browser. The Lifespans implementation takes a somewhat different approach: much of the information needed to construct a person's timeline row is assembled together for the chart. This was a deliberate implementation choice because the timeline needs several related values at the same time.</p>
+<p>Lifespans is person-oriented rather than family-oriented. The chart gathers the subject's parents, siblings, spouses and children and arranges them into those groups. People are de-duplicated where necessary.</p>
+<p>Vega export is configured to use lifespans as the download filename and a white chart background, so exported SVG and PNG files have predictable filenames and appearance.</p>
+<h2 id="markdown-processing">23.9 Markdown processing<a class="headerlink" href="#markdown-processing" title="Permanent link">&para;</a></h2>
+<p>DWE supports three ways of identifying Markdown: the fixed first-line MD marker, a selected Markdown note type, and the <strong>Treat ordinary notes as Markdown</strong> option.</p>
+<p>MD is deliberately a fixed marker rather than a configurable string, making marked notes portable between DWE installations and family trees.</p>
+<p><strong>Html code</strong> and <strong>To Do</strong> notes always take precedence over the Markdown mechanisms and are excluded from Markdown processing.</p>
+<p>DWE preserves Gramps styled-note formatting and then allows Markdown processing of the resulting content. This permits useful combinations such as a Markdown table within an otherwise normally styled Gramps note. Because Gramps styling and Markdown are two independent formatting systems, unusual combinations may still need to be checked in the generated website.</p>
+<h2 id="gramps-styled-note-compatibility">23.10 Gramps styled-note compatibility<a class="headerlink" href="#gramps-styled-note-compatibility" title="Permanent link">&para;</a></h2>
+<p>Gramps 5.2.3's HTML backend does not provide mappings for the Strikethrough and Subscript StyledText types. As a result, the original DWR can fail when it encounters notes containing those styles.</p>
+<p>DWE uses its own small extension of the Gramps HTML backend to provide HTML mappings for these styles (\&lt;s&gt; and \&lt;sub&gt;). This retains compatibility with Gramps 5.2 while allowing the normal Gramps implementation to handle the other StyledText types.</p>
+<h2 id="participation-events-labels">23.11 Participation events labels<a class="headerlink" href="#participation-events-labels" title="Permanent link">&para;</a></h2>
+<p>Participation event labels are two-line labels displayed like this: Marriage followed by (:Best man) for a person with a ‘Best man’ role. The colon identifies participation roles, in case parentheses may be part of an event type name, such as Marriage (Christian).</p>
+<h2 id="diagnostic-logging">23.12 Diagnostic logging<a class="headerlink" href="#diagnostic-logging" title="Permanent link">&para;</a></h2>
+<p>DWE uses the Gramps/Python logging system for development diagnostics.</p>
+<p>Normal diagnostic messages should use DEBUG level so that they do not interfere with ordinary Gramps operation. WARNING and particularly ERROR should be reserved for conditions that the user needs to know about; Gramps may present ERROR messages through its error-reporting interface.</p>
+<p>Logging output appears in the console when Gramps is started from the console.</p>
+<h2 id="development-and-source-control">23.13 Development and source control<a class="headerlink" href="#development-and-source-control" title="Permanent link">&para;</a></h2>
+<p>DWE is maintained as a Git repository. Development changes should normally be made in a separate branch, tested by generating and viewing a report, and committed in small, logical checkpoints.</p>
+<p>Generated websites should be tested through a local HTTP server rather than solely with file:// URLs. Some browser features, including the Tree Viewer, require normal web-server behaviour. DWE provides <strong>View report locally.bat</strong> for convenient local viewing on Windows.</p>
+<p>Changes involving bundled third-party components such as Topola should distinguish between changes to the upstream source and the built files stored in the DWE repository.</p>
+<h2 id="browser-storage">23.14 Browser storage<a class="headerlink" href="#browser-storage" title="Permanent link">&para;</a></h2>
+<p>Some DWE display preferences are saved in the browser so that they can be remembered as the visitor moves between pages or returns to the website later.</p>
+<p>Web browsers provide two similar forms of storage that can be used for this purpose:</p>
+<p><strong>Session storage</strong> retains information for the current page session. It can carry a setting between pages while that session continues but is not intended to persist as a long-term preference.</p>
+<p><strong>Local storage</strong> persists beyond the current browser session. It allows a website to remember a preference when the visitor closes the website and returns to it later.</p>
+<p>DWE uses browser storage for some visitor display preferences rather than storing them in the generated family-history data. These settings therefore belong to the browser being used, not to the Gramps family tree or the DWE report options.</p>
+<p>Browser storage must be permitted for these preferences to be remembered. Most browsers allow it by default. Private or incognito browsing, clearing site data, or privacy settings that remove or prevent site storage may cause preferences to be lost.</p>
+<p>These browser-stored preferences should not be confused with the <strong>report options</strong> used when generating DWE. Report options are saved in a file by Gramps for the family tree; browser preferences are choices made while viewing the generated website.</p>
+<h2 id="additional-css-and-javascript">23.15 Additional CSS and JavaScript<a class="headerlink" href="#additional-css-and-javascript" title="Permanent link">&para;</a></h2>
+<p>DWE retains the CSS and JavaScript structure of the original <em>Dynamic Web Report</em> and adds or modifies files to support its additional features.</p>
+<p>The <em>dwr_start.js</em> file loads the JavaScript and style sheets used by the generated website. In addition to the standard DWR files, DWE loads <em>dwr_styles_B.css</em>, which contains additional DWE styling, and <em>timeline-vega.js</em>, which contains JavaScript used for the Lifespans display.</p>
+<p>Much of the DWE website behaviour is implemented in the existing DWR JavaScript structure rather than in separate files for every DWE feature. For example, DWE additions to person pages and other displays are integrated with the existing <em>dwr.js</em> processing.</p>
+<p>Keeping the additional Lifespans code in <em>timeline-vega.js</em> helps separate the Vega-based graphical display from the larger <em>dwr.js</em> file. Additional DWE CSS in <em>dwr_styles_B.css</em> similarly allows DWE-specific presentation changes to be kept separate from the main DWR style sheet.</p>
+<h2 id="generated-website-data-files">23.16 Generated website data files<a class="headerlink" href="#generated-website-data-files" title="Permanent link">&para;</a></h2>
+<p>DWE reuses the architecture of the original <em>Dynamic Web Report</em> in which much of the genealogical information used by the website is exported into JavaScript data files. The browser uses this data to construct person, family and other displays dynamically rather than requiring a separately generated HTML page containing all the information for each person.</p>
+<p>DynamicWebExtended.py exports the principal Gramps objects into JavaScript data structures. These include individuals, families, places, sources, citations, repositories and media. References between objects are generally stored as indexes into the corresponding data structures; for example, an event can contain a place index and citation indexes rather than repeating the complete place and citation records.</p>
+<p>DWE extends some of the data inherited from DWR to support its additional features. Person data, for example, includes information used for Lifespan, Why Me, Tracking and Story, as well as the existing person and event information.</p>
+<p>Tree Viewer is somewhat different. When <strong>Include Tree Viewer</strong> is selected, DWE also generates a GEDCOM file for the bundled Topola viewer. This is separate from the JavaScript data used by the normal DWE pages. Before the GEDCOM is included in the generated website, DWE removes the Gramps researcher/submitter information and the automatically generated copyright statement.</p>
+<p>The generated website therefore contains both the program files that provide the browser interface and generated data representing the selected family tree. These files belong together: when a generated DWE website is copied to another location or uploaded to a web server, the complete generated directory should be copied.</p>
+<p>The generated data filenames reflect these object types. I represents individuals (persons), F families, P places, S sources, C citations, M media and R repositories. The data is divided further into files containing particular fields. For example, <em>dwr_db_I_birth_date_0.js</em> contains extracted birth-date data for individuals. If the data for a field is sufficiently large, it is split across a series of numbered files, such as ..._0.js, ..._1.js, ..._2.js and so on.</p>
+<h2 id="themes">23.17 Themes<a class="headerlink" href="#themes" title="Permanent link">&para;</a></h2>
+<p>The original DWR uses the bootstrap system to create its website pages. DWE includes a range of Bootstrap themes from Bootswatch that the creator can choose from to generate the site. A site visitor also has access to the same range of themes, so the visitor can easily override the theme and hence the look of their website by choosing another from the <strong>Configuration</strong> page.</p>
+<h2 id="notable-records-records-library">23.18 Notable records — records library<a class="headerlink" href="#notable-records-records-library" title="Permanent link">&para;</a></h2>
+<p>The Notable records feature is based on the Gramps librecords.py library, which provides the calculations used to identify individuals and families holding various genealogical records.</p>
+<p>DWE currently uses a modified local copy of this library, named dwe_records.py, rather than importing the standard Gramps library directly.</p>
+<p>The local version incorporates two improvements:</p>
+<ul>
+<li>
+<p><strong>Person with most marriages:</strong> Adds a new record category identifying individuals with the greatest number of marriages.</p>
+</li>
+<li>
+<p><strong>Alphabetical sorting:</strong> Sorts individuals and families alphabetically when multiple records have the same ranking, providing a consistent and predictable display order.</p>
+</li>
+</ul>
+<p>Both improvements have been submitted to the Gramps project as pull requests:</p>
+<ul>
+<li>
+<p>PR #2567 — Person with most marriages</p>
+</li>
+<li>
+<p>PR #2570 — Sort tied Notable Records alphabetically</p>
+</li>
+</ul>
+<p>The intention is to use the standard Gramps librecords.py again once these improvements have been incorporated into Gramps and are available in the supported versions.</p>
+<p>The original import statement has been retained as a comment in DynamicWebExtended.py to make this future change easier.</p>
+<p>DWE also uses a database adapter to restrict record calculations to the individuals and families included in the generated website, ensuring that the report's privacy and living-person settings are respected.</p>
+<h2 id="calendar-birthday-names">23.19 Calendar birthday names<a class="headerlink" href="#calendar-birthday-names" title="Permanent link">&para;</a></h2>
+<p>The rules for determining the surname displayed for married women in Calendar birth events are described in the Calendar Options section.</p>
+<p>DWE has retained the surname-selection rules from the original Gramps Web Calendar report. The apparent intention is to allow women to be identified by either their own surname or a surname acquired through marriage.</p>
+<p>However, determining an appropriate surname is not straightforward, particularly when a woman has multiple marriages or several recorded names. The inherited implementation represents a compromise, using the woman's recorded names and the order of her families in Gramps. The resulting surname may not necessarily be the one she used at the time of a particular event.</p>
+<h2 id="known-issues-and-future-work">23.20 Known issues and future work<a class="headerlink" href="#known-issues-and-future-work" title="Permanent link">&para;</a></h2>
+<p>Areas identified for possible future work include:</p>
+<ul>
+<li>
+<p><strong>None relationships</strong> - deciding whether explicitly recorded <strong>None</strong> parent-child relationships should optionally be displayed, while continuing to exclude them from relationship traversal;</p>
+</li>
+<li>
+<p><strong>Help page in DWE report options dialog</strong> - reviewing the DWE help-page destination rather than retaining the original DWR help link. The <strong>help page</strong> link is hard coded inside Python – the existing report points it to the original Dynamic Web report help page. I would need to adapt that at some time and point this to its own page;</p>
+</li>
+<li>
+<p><strong>Hyperlink displa</strong>y- reviewing the visual treatment of hyperlinks where themes do not make clickable text sufficiently obvious;</p>
+</li>
+<li>
+<p><strong>Version testing</strong> - testing DWE against future Gramps versions in an isolated environment before declaring them supported;</p>
+</li>
+<li>
+<p><strong>Local server window</strong> - automatically closing of the local server command window after a user closes the DWE browser page;</p>
+</li>
+<li>
+<p><strong>Optimise media file copying</strong> - improving the copy_file() function to avoid unnecessary copying of unchanged files. Currently, DWE (and DWR) copies each source file to a temporary destination and then compares its contents with the existing file, even when the files are identical. Consider using file size, modification timestamps or other methods to identify unchanged files before copying, while ensuring that modified files are reliably detected. This could significantly reduce report generation time for websites containing large numbers of media files, particularly when regenerating an existing website.</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../22-calendar-options/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 22 Calendar Options">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                22 Calendar Options
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../24-report-generation-progress-and-timing/" class="md-footer__link md-footer__link--next" aria-label="Next: 24 Report generation progress and timing">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                24 Report generation progress and timing
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

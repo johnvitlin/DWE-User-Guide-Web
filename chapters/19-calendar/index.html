@@ -1,0 +1,1543 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://www.example.com/chapters/19-calendar/">
+      
+      
+      
+        <link rel="prev" href="../18-statistics/">
+      
+      
+        <link rel="next" href="../20-other-enhancements/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>19 Calendar - Dynamic Web Extended User Guide</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Dynamic Web Extended User Guide" class="md-header__button md-logo" aria-label="Dynamic Web Extended User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dynamic Web Extended User Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              19 Calendar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Dynamic Web Extended User Guide" class="md-nav__button md-logo" aria-label="Dynamic Web Extended User Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    Dynamic Web Extended User Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1 Introduction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-main-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2 Main features
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-history/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  3 History
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-installing-dynamic-web-extended/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  4 Installing Dynamic Web Extended
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-creating-a-dynamic-web-extended-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5 Creating a Dynamic Web Extended website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-person-pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  6 Person pages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  7 Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-lifespans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  8 Lifespans
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-citations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  9 Citations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-tree-viewer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  10 Tree Viewer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  11 Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-why-me/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  12 Why Me
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-story/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  13 Story
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-clarifying-multiple-families/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  14 Clarifying multiple families
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15-local-labels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  15 Local Labels
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16-about-page-for-website/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  16 About page for website
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17-website-themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  17 Website Themes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18-statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  18 Statistics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19 Calendar
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  19 Calendar
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.1 Calendar display
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2 Viewing events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 Viewing events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-with-an-unknown-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2.1 Events with an unknown day
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29th-february" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2.2 29<sup>th</sup> February
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3 Calendar controls
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.3 Calendar controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#living-people-only-all-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3.1 Living people only / All people
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#today-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3.2 Today button
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.4 About section
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-dates-are-handled" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5 How dates are handled
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.5 How dates are handled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dates-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5.1 Dates included
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dates-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5.2 Dates excluded
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-and-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.6 Privacy and filtering
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#married-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.7 Married names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20-other-enhancements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  20 Other enhancements
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21-dwe-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  21 DWE Options
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22-calendar-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  22 Calendar Options
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23-program-design-and-development-notes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  23 Program design and development notes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24-report-generation-progress-and-timing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  24 Report generation progress and timing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25-appendix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  25 Appendix
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-display" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.1 Calendar display
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2 Viewing events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.2 Viewing events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events-with-an-unknown-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2.1 Events with an unknown day
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29th-february" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.2.2 29<sup>th</sup> February
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3 Calendar controls
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.3 Calendar controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#living-people-only-all-people" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3.1 Living people only / All people
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#today-button" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.3.2 Today button
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.4 About section
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-dates-are-handled" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5 How dates are handled
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="19.5 How dates are handled">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dates-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5.1 Dates included
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dates-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.5.2 Dates excluded
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-and-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.6 Privacy and filtering
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#married-names" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        19.7 Married names
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="calendar">19 Calendar<a class="headerlink" href="#calendar" title="Permanent link">&para;</a></h1>
+<p>☐ For creators ☑ For visitors</p>
+<p>Dynamic Web Extended (DWE) provides an interactive Calendar that displays birth, marriage and death events from the family history. It displays 12 months of the year, typically in a 3 by 4 grid, depending on the width of the browser. The calendar groups events by month and day, regardless of the historical year in which they occurred.</p>
+<p>The Calendar is based on the <strong>Web Calendar</strong> report that is also available in Gramps, and has been updated and modified to work with DWE.</p>
+<p>The Calendar is an online display and does not provide a printing facility. Other Gramps reports and addons are available for creating printed calendars if required.</p>
+<h2 id="calendar-display">19.1 Calendar display<a class="headerlink" href="#calendar-display" title="Permanent link">&para;</a></h2>
+<p>The Calendar is an option when the report is generated, and can be opened through the top-level Calendar menu:</p>
+<p><img src="../../media/image36.png" /></p>
+<p>The website creator has previously determined which event types and historical years are included in the Calendar.</p>
+<p>Each month displays its dates arranged under weekday headings. Dates that have events show a number indicating how many events are recorded for that month and day.</p>
+<figure>
+<img src="../../media/image37.png" />
+<figcaption><p>Figure 28- Calendar display</p></figcaption>
+</figure>
+
+<p>The Calendar uses the current year to set the weekday positions of dates. Consequently, the weekday shown for an event does not necessarily correspond to the weekday on which the historical event occurred.</p>
+<h2 id="viewing-events">19.2 Viewing events<a class="headerlink" href="#viewing-events" title="Permanent link">&para;</a></h2>
+<p>Events are listed with the most recent year first.</p>
+<p>Visitors can examine events associated with a date in two ways:</p>
+<ul>
+<li>
+<p><strong>Hover over a date</strong> to see a temporary preview of the events.</p>
+</li>
+<li>
+<p><strong>Click a date</strong> to open a popup that remains visible, allowing the visitor to examine the events and follow links to Individual pages.</p>
+</li>
+</ul>
+<p>This image shows hover over date; there is only one event on this date. This event has a description.</p>
+<figure>
+<img src="../../media/image38.png" />
+<figcaption><p>Figure 29- Hover over date</p></figcaption>
+</figure>
+
+<h3 id="events-with-an-unknown-day">19.2.1 Events with an unknown day<a class="headerlink" href="#events-with-an-unknown-day" title="Permanent link">&para;</a></h3>
+<p>Events with a known month but an unknown day are grouped under an asterisk (*) in the bottom-right cell of the relevant month. Hovering over or clicking the asterisk displays these events in the same way as events associated with a particular date.</p>
+<h3 id="29th-february">19.2.2 29<sup>th</sup> February<a class="headerlink" href="#29th-february" title="Permanent link">&para;</a></h3>
+<p>The Calendar includes <strong>29 February</strong> every year, even when the current year is not a leap year. This ensures that events recorded on 29 February remain visible.</p>
+<h2 id="calendar-controls">19.3 Calendar controls<a class="headerlink" href="#calendar-controls" title="Permanent link">&para;</a></h2>
+<h3 id="living-people-only-all-people">19.3.1 Living people only / All people<a class="headerlink" href="#living-people-only-all-people" title="Permanent link">&para;</a></h3>
+<p>The Calendar provides two options for controlling which events are displayed.</p>
+<ul>
+<li>
+<p><strong>Living people only</strong> – displays events associated with people considered probably living.</p>
+</li>
+<li>
+<p><strong>All people</strong> – displays all events, subject to the report's filtering and privacy settings.</p>
+</li>
+</ul>
+<p>Changing the selection immediately updates the event counts and the events displayed.</p>
+<p>A person without a recorded death date is not necessarily considered living. Gramps uses available information and its probable-living rules when determining whether someone is likely to be alive.</p>
+<p>These options do not change the information included in the generated website.</p>
+<h3 id="today-button">19.3.2 Today button<a class="headerlink" href="#today-button" title="Permanent link">&para;</a></h3>
+<p>The <strong>Today</strong> button scrolls the Calendar to the current date.</p>
+<h2 id="about-section">19.4 About section<a class="headerlink" href="#about-section" title="Permanent link">&para;</a></h2>
+<p>The website creator may provide an optional explanatory note for the Calendar. The note appears in an expandable <strong>About...</strong> section above the Calendar heading and controls.</p>
+<p>The section can be expanded or collapsed. Its state is preserved when switching between Living people only and All people.</p>
+<h2 id="how-dates-are-handled">19.5 How dates are handled<a class="headerlink" href="#how-dates-are-handled" title="Permanent link">&para;</a></h2>
+<p>The Calendar uses the month and day recorded for an event, rather than the historical year, to determine where it appears. Only events within the year range specified by the website creator are included.</p>
+<h3 id="dates-included">19.5.1 Dates included<a class="headerlink" href="#dates-included" title="Permanent link">&para;</a></h3>
+<p>The following dates are included in a Calendar:</p>
+<ul>
+<li>
+<p><strong>Exact dates</strong> — Dates with a known day, month and year.</p>
+</li>
+<li>
+<p><strong>Month-only dates</strong> — Dates with a known month and year but no known day.</p>
+</li>
+<li>
+<p><strong>About dates</strong> — Approximate dates with a known month.</p>
+</li>
+<li>
+<p><strong>Estimated dates</strong> — Estimated dates with a known month.</p>
+</li>
+<li>
+<p><strong>Calculated dates</strong> — Calculated dates with a known month.</p>
+</li>
+</ul>
+<p>For About, Estimated and Calculated dates, events with a known day appear on that date. Events with a known month but an unknown day appear under the asterisk (*) for that month.</p>
+<h3 id="dates-excluded">19.5.2 Dates excluded<a class="headerlink" href="#dates-excluded" title="Permanent link">&para;</a></h3>
+<p>The following dates are excluded:</p>
+<ul>
+<li>
+<p><strong>Year-only dates</strong>, where the month is unknown.</p>
+</li>
+<li>
+<p><strong>Empty or unknown dates</strong> without usable month information.</p>
+</li>
+<li>
+<p>Dates qualified as <strong>Before or After</strong>.</p>
+</li>
+<li>
+<p>Dates qualified as <strong>From or To</strong>.</p>
+</li>
+<li>
+<p>Date <strong>ranges</strong> and date <strong>spans</strong>.</p>
+</li>
+</ul>
+<p>These restrictions prevent dates with uncertain boundaries from being displayed as specific calendar dates.</p>
+<h2 id="privacy-and-filtering">19.6 Privacy and filtering<a class="headerlink" href="#privacy-and-filtering" title="Permanent link">&para;</a></h2>
+<p>Calendar events are subject to the report creator's selected Gramps filters and privacy settings. Visitors cannot use the Calendar to access individuals or events excluded from the generated report. Selecting <strong>All people</strong> does not override these restrictions.</p>
+<p>For information about configuring the Calendar, see chapter <a href="../22-calendar-options/#calendar-options">22</a> <a href="../22-calendar-options/#calendar-options">Calendar Options</a> in the report creator section of this guide.</p>
+<h2 id="married-names">19.7 Married names<a class="headerlink" href="#married-names" title="Permanent link">&para;</a></h2>
+<p>The website creator can decide to use a woman’s own name or her married name when including birthday events for women. Thus, her name might be different in different events. See also section <a href="../23-program-design-and-development-notes/#calendar-birthday-names">23.19</a> <a href="../22-calendar-options/#birthday-surname">Birthday surname</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../18-statistics/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 18 Statistics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                18 Statistics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../20-other-enhancements/" class="md-footer__link md-footer__link--next" aria-label="Next: 20 Other enhancements">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                20 Other enhancements
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>
